@@ -9,13 +9,13 @@
     body { margin: 0; background: #f7f7f4; color: #202020; }
     main { max-width: 1100px; margin: 0 auto; padding: 24px; }
     audio { width: 100%; margin: 12px 0 22px; }
-    .timeline { position: relative; height: 360px; overflow-x: auto; border: 1px solid #ccc; background: #fff; }
+    .timeline { position: relative; height: var(--timeline-height); overflow-x: auto; border: 1px solid #ccc; background: #fff; }
     .track { position: relative; height: 100%; min-width: 900px; }
     .guide { position: absolute; left: 0; right: 0; height: 1px; background: #deded8; }
     .note {
       position: absolute;
-      width: var(--note-width, 128px);
-      height: 128px;
+      width: var(--note-width);
+      height: var(--note-height);
       padding: 0;
       border: 0;
       background: transparent;
@@ -32,8 +32,8 @@
     .note img { width: 100%; height: 100%; display: block; pointer-events: none; }
     .note.active {
       opacity: 1;
-      transform: translate(-50%, -50%) scale(1.25);
-      filter: drop-shadow(0 0 10px rgba(224, 90, 42, .55));
+      transform: translate(-50%, -50%) scale(var(--active-scale));
+      filter: drop-shadow(0 0 10px var(--highlight-color));
       z-index: 2;
     }
     .label { position: absolute; transform: translate(-50%, 24px); font-size: 12px; white-space: nowrap; color: #555; }
@@ -51,21 +51,36 @@
   <script>
     const DATA = {"duration": 43.16009070294785, "notes": [{"start": 0.958, "end": 1.109, "duration": 0.151, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 1.521, "end": 1.654, "duration": 0.134, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 2.067, "end": 2.206, "duration": 0.139, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 2.635, "end": 2.775, "duration": 0.139, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 3.187, "end": 3.344, "duration": 0.157, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 3.779, "end": 3.907, "duration": 0.128, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 4.331, "end": 4.476, "duration": 0.145, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 4.894, "end": 5.045, "duration": 0.151, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 5.457, "end": 5.596, "duration": 0.139, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 6.026, "end": 6.159, "duration": 0.134, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 6.844, "end": 6.949, "duration": 0.104, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 7.372, "end": 7.512, "duration": 0.139, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 7.941, "end": 8.086, "duration": 0.145, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 8.493, "end": 8.632, "duration": 0.139, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 9.044, "end": 9.195, "duration": 0.151, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 9.625, "end": 9.77, "duration": 0.145, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 10.199, "end": 10.333, "duration": 0.134, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 10.728, "end": 10.89, "duration": 0.163, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 11.302, "end": 11.465, "duration": 0.163, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 11.865, "end": 12.051, "duration": 0.186, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 12.458, "end": 12.632, "duration": 0.174, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 13.044, "end": 13.218, "duration": 0.174, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 13.648, "end": 13.81, "duration": 0.163, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 14.228, "end": 14.338, "duration": 0.11, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 15.052, "end": 15.18, "duration": 0.128, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 15.546, "end": 15.685, "duration": 0.139, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 16.068, "end": 16.225, "duration": 0.157, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 16.614, "end": 16.753, "duration": 0.139, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 17.131, "end": 17.252, "duration": 0.122, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 17.81, "end": 18.001, "duration": 0.192, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 18.477, "end": 18.593, "duration": 0.116, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 19.04, "end": 19.162, "duration": 0.122, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 19.586, "end": 19.714, "duration": 0.128, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 20.114, "end": 20.242, "duration": 0.128, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 20.637, "end": 20.759, "duration": 0.122, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 21.275, "end": 21.362, "duration": 0.087, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 21.751, "end": 21.885, "duration": 0.134, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 22.274, "end": 22.425, "duration": 0.151, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 22.831, "end": 23.017, "duration": 0.186, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 23.47, "end": 23.638, "duration": 0.168, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 24.015, "end": 24.201, "duration": 0.186, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 24.607, "end": 24.758, "duration": 0.151, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 25.165, "end": 25.35, "duration": 0.186, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 25.797, "end": 25.925, "duration": 0.128, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 26.337, "end": 26.471, "duration": 0.134, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 26.941, "end": 27.103, "duration": 0.163, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 27.649, "end": 27.754, "duration": 0.104, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 28.77, "end": 28.932, "duration": 0.163, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 29.524, "end": 29.71, "duration": 0.186, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 30.174, "end": 30.366, "duration": 0.192, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 30.836, "end": 30.999, "duration": 0.163, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 31.44, "end": 31.608, "duration": 0.168, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 32.084, "end": 32.27, "duration": 0.186, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 32.694, "end": 32.833, "duration": 0.139, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 33.239, "end": 33.367, "duration": 0.128, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 33.82, "end": 33.948, "duration": 0.128, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 34.424, "end": 34.615, "duration": 0.192, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 35.12, "end": 35.219, "duration": 0.099, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 35.939, "end": 36.037, "duration": 0.099, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 36.502, "end": 36.589, "duration": 0.087, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 37.82, "end": 37.97, "duration": 0.151, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 39.219, "end": 39.375, "duration": 0.157, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}, {"start": 39.863, "end": 40.054, "duration": 0.192, "note": "C7", "midi": 96, "frequency_hz": 2093.0, "estimated_midi": 96.0, "confidence": 0.25, "method": "energy_centroid"}]};
     const NOTE_IMAGES = ["../img/canard/barre%2001.svg", "../img/canard/barre%2002.svg", "../img/canard/barre%2003.svg"];
+    const CONFIG = {"timeline_height": 360, "staff_top": 92, "line_spacing": 44, "px_per_second": 110, "note_height": 128, "note_min_width": 128, "active_scale": 1.25, "show_note_labels": false, "highlight_color": "rgb(224, 203, 42, 0.55)", "vertical_padding": 8, "pitch_step_px": 22};
     const track = document.getElementById('track');
     const audio = document.getElementById('audio');
-    const pxPerSecond = 110;
+    const timeline = document.getElementById('timeline');
+    const pxPerSecond = CONFIG.px_per_second;
     const width = Math.max(900, DATA.duration * pxPerSecond + 80);
-    const staffTop = 92;
-    const lineSpacing = 44;
+    const timelineHeight = CONFIG.timeline_height;
+    const staffTop = CONFIG.staff_top;
+    const lineSpacing = CONFIG.line_spacing;
     const staffCenterMidi = 71;
-    const minY = 28;
-    const maxY = 332;
+    const noteHeight = CONFIG.note_height;
+    const noteMinWidth = CONFIG.note_min_width;
+    const activeScale = CONFIG.active_scale;
+    const showNoteLabels = Boolean(CONFIG.show_note_labels);
+    const highlightColor = CONFIG.highlight_color;
+    const noteHalfHeight = noteHeight * activeScale / 2;
+    const minY = CONFIG.vertical_padding + noteHalfHeight;
+    const maxY = timelineHeight - CONFIG.vertical_padding - noteHalfHeight;
+    const centerY = staffTop + 2 * lineSpacing;
     const midiValues = DATA.notes.map((item) => item.midi);
     const minMidi = midiValues.length ? Math.min(...midiValues) : staffCenterMidi;
     const maxMidi = midiValues.length ? Math.max(...midiValues) : staffCenterMidi;
     const midiCenter = (minMidi + maxMidi) / 2;
     const midiRange = Math.max(1, maxMidi - minMidi);
-    const compressedLineSpacing = midiRange <= 5 ? lineSpacing * 0.55 : lineSpacing;
+    const availablePitchHeight = Math.max(1, maxY - minY);
+    const pitchStep = Math.min(CONFIG.pitch_step_px, availablePitchHeight / midiRange);
+    timeline.style.setProperty('--timeline-height', timelineHeight + 'px');
+    track.style.setProperty('--note-height', noteHeight + 'px');
+    track.style.setProperty('--active-scale', activeScale);
+    track.style.setProperty('--highlight-color', highlightColor);
     track.style.width = width + 'px';
 
     function pseudoRandom(seed) {
@@ -76,7 +91,7 @@
     for (let i = 0; i < 5; i++) {
       const line = document.createElement('div');
       line.className = 'guide';
-      line.style.top = (92 + i * 44) + 'px';
+      line.style.top = (staffTop + i * lineSpacing) + 'px';
       track.appendChild(line);
     }
 
@@ -86,9 +101,9 @@
 
     const elements = DATA.notes.map((item) => {
       const x = item.start * pxPerSecond + 40;
-      const rawY = staffTop + 2 * lineSpacing - ((item.midi - midiCenter) * compressedLineSpacing / 2);
+      const rawY = centerY - ((item.midi - midiCenter) * pitchStep);
       const y = Math.min(maxY, Math.max(minY, rawY));
-      const noteWidth = Math.max(128, item.duration * pxPerSecond);
+      const noteWidth = Math.max(noteMinWidth, item.duration * pxPerSecond);
       const note = document.createElement('button');
       note.className = 'note';
       note.type = 'button';
@@ -110,6 +125,7 @@
       label.textContent = item.note;
       label.style.left = x + 'px';
       label.style.top = y + 'px';
+      label.hidden = !showNoteLabels;
       track.append(note, label);
       return { item, note, label };
     });
@@ -121,7 +137,9 @@
         const played = time >= entry.item.start;
         const active = time >= entry.item.start && time <= entry.item.end;
         entry.note.classList.toggle('played', played);
-        entry.label.classList.toggle('played', played);
+        if (showNoteLabels) {
+          entry.label.classList.toggle('played', played);
+        }
         entry.note.classList.toggle('active', active);
       }
       requestAnimationFrame(tick);

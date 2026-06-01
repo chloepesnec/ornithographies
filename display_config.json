@@ -1,0 +1,28 @@
+{
+  "default": {
+    "timeline_height": 360,
+    "staff_top": 92,
+    "line_spacing": 44,
+    "px_per_second": 110,
+    "note_height": 128,
+    "note_min_width": 128,
+    "active_scale": 1.25,
+    "show_note_labels": false,
+    "highlight_color": "rgba(224, 90, 42, 0.55)",
+    "vertical_padding": 8,
+    "pitch_step_px": 22
+  },
+  "birds": {
+    "canard": {
+      "note_height": 128,
+      "note_min_width": 128,
+      "highlight_color": "rgb(224, 203, 42, 0.55)"
+    },
+    "merle": {
+      "note_height": 240,
+      "note_min_width": 240,
+      "pitch_step_px": 18,
+      "highlight_color": "rgba(224, 90, 42, 0.55)"
+    }
+  }
+}

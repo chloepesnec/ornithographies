@@ -22,6 +22,19 @@ except ImportError as exc:
 
 NOTE_NAMES = ("C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B")
 IMAGE_EXTENSIONS = {".svg", ".png", ".jpg", ".jpeg", ".webp"}
+DEFAULT_DISPLAY_CONFIG = {
+    "timeline_height": 360,
+    "staff_top": 92,
+    "line_spacing": 44,
+    "px_per_second": 110,
+    "note_height": 128,
+    "note_min_width": 128,
+    "active_scale": 1.25,
+    "show_note_labels": False,
+    "highlight_color": "rgba(224, 90, 42, 0.55)",
+    "vertical_padding": 8,
+    "pitch_step_px": 22,
+}
 
 
 def hz_to_midi(freq_hz: float) -> float:
@@ -278,17 +291,28 @@ def collect_note_images(audio_path: Path, note_image: str | None) -> list[Path]:
     return images
 
 
+def load_display_config(config_path: Path, audio_path: Path) -> dict:
+    config = DEFAULT_DISPLAY_CONFIG.copy()
+    if config_path.exists():
+        raw = json.loads(config_path.read_text(encoding="utf-8"))
+        config.update(raw.get("default", {}))
+        config.update(raw.get("birds", {}).get(audio_path.stem, {}))
+    return config
+
+
 def write_html(
     path: Path,
     audio_path: Path,
     notes: list[dict],
     duration: float,
     note_image_paths: list[Path],
+    display_config: dict,
 ) -> None:
     rel_audio = relative_url(path, audio_path)
     rel_note_images = [relative_url(path, image_path) for image_path in note_image_paths]
     data = json.dumps({"duration": duration, "notes": notes}, ensure_ascii=True)
     image_data = json.dumps(rel_note_images, ensure_ascii=True)
+    config_data = json.dumps(display_config, ensure_ascii=True)
     page = f"""<!doctype html>
 <html lang="fr">
 <head>
@@ -300,13 +324,13 @@ def write_html(
     body {{ margin: 0; background: #f7f7f4; color: #202020; }}
     main {{ max-width: 1100px; margin: 0 auto; padding: 24px; }}
     audio {{ width: 100%; margin: 12px 0 22px; }}
-    .timeline {{ position: relative; height: 360px; overflow-x: auto; border: 1px solid #ccc; background: #fff; }}
+    .timeline {{ position: relative; height: var(--timeline-height); overflow-x: auto; border: 1px solid #ccc; background: #fff; }}
     .track {{ position: relative; height: 100%; min-width: 900px; }}
     .guide {{ position: absolute; left: 0; right: 0; height: 1px; background: #deded8; }}
     .note {{
       position: absolute;
-      width: var(--note-width, 128px);
-      height: 128px;
+      width: var(--note-width);
+      height: var(--note-height);
       padding: 0;
       border: 0;
       background: transparent;
@@ -323,8 +347,8 @@ def write_html(
     .note img {{ width: 100%; height: 100%; display: block; pointer-events: none; }}
     .note.active {{
       opacity: 1;
-      transform: translate(-50%, -50%) scale(1.25);
-      filter: drop-shadow(0 0 10px rgba(224, 90, 42, .55));
+      transform: translate(-50%, -50%) scale(var(--active-scale));
+      filter: drop-shadow(0 0 10px var(--highlight-color));
       z-index: 2;
     }}
     .label {{ position: absolute; transform: translate(-50%, 24px); font-size: 12px; white-space: nowrap; color: #555; }}
@@ -342,21 +366,36 @@ def write_html(
   <script>
     const DATA = {data};
     const NOTE_IMAGES = {image_data};
+    const CONFIG = {config_data};
     const track = document.getElementById('track');
     const audio = document.getElementById('audio');
-    const pxPerSecond = 110;
+    const timeline = document.getElementById('timeline');
+    const pxPerSecond = CONFIG.px_per_second;
     const width = Math.max(900, DATA.duration * pxPerSecond + 80);
-    const staffTop = 92;
-    const lineSpacing = 44;
+    const timelineHeight = CONFIG.timeline_height;
+    const staffTop = CONFIG.staff_top;
+    const lineSpacing = CONFIG.line_spacing;
     const staffCenterMidi = 71;
-    const minY = 28;
-    const maxY = 332;
+    const noteHeight = CONFIG.note_height;
+    const noteMinWidth = CONFIG.note_min_width;
+    const activeScale = CONFIG.active_scale;
+    const showNoteLabels = Boolean(CONFIG.show_note_labels);
+    const highlightColor = CONFIG.highlight_color;
+    const noteHalfHeight = noteHeight * activeScale / 2;
+    const minY = CONFIG.vertical_padding + noteHalfHeight;
+    const maxY = timelineHeight - CONFIG.vertical_padding - noteHalfHeight;
+    const centerY = staffTop + 2 * lineSpacing;
     const midiValues = DATA.notes.map((item) => item.midi);
     const minMidi = midiValues.length ? Math.min(...midiValues) : staffCenterMidi;
     const maxMidi = midiValues.length ? Math.max(...midiValues) : staffCenterMidi;
     const midiCenter = (minMidi + maxMidi) / 2;
     const midiRange = Math.max(1, maxMidi - minMidi);
-    const compressedLineSpacing = midiRange <= 5 ? lineSpacing * 0.55 : lineSpacing;
+    const availablePitchHeight = Math.max(1, maxY - minY);
+    const pitchStep = Math.min(CONFIG.pitch_step_px, availablePitchHeight / midiRange);
+    timeline.style.setProperty('--timeline-height', timelineHeight + 'px');
+    track.style.setProperty('--note-height', noteHeight + 'px');
+    track.style.setProperty('--active-scale', activeScale);
+    track.style.setProperty('--highlight-color', highlightColor);
     track.style.width = width + 'px';
 
     function pseudoRandom(seed) {{
@@ -367,7 +406,7 @@ def write_html(
     for (let i = 0; i < 5; i++) {{
       const line = document.createElement('div');
       line.className = 'guide';
-      line.style.top = (92 + i * 44) + 'px';
+      line.style.top = (staffTop + i * lineSpacing) + 'px';
       track.appendChild(line);
     }}
 
@@ -377,9 +416,9 @@ def write_html(
 
     const elements = DATA.notes.map((item) => {{
       const x = item.start * pxPerSecond + 40;
-      const rawY = staffTop + 2 * lineSpacing - ((item.midi - midiCenter) * compressedLineSpacing / 2);
+      const rawY = centerY - ((item.midi - midiCenter) * pitchStep);
       const y = Math.min(maxY, Math.max(minY, rawY));
-      const noteWidth = Math.max(128, item.duration * pxPerSecond);
+      const noteWidth = Math.max(noteMinWidth, item.duration * pxPerSecond);
       const note = document.createElement('button');
       note.className = 'note';
       note.type = 'button';
@@ -401,6 +440,7 @@ def write_html(
       label.textContent = item.note;
       label.style.left = x + 'px';
       label.style.top = y + 'px';
+      label.hidden = !showNoteLabels;
       track.append(note, label);
       return {{ item, note, label }};
     }});
@@ -412,7 +452,9 @@ def write_html(
         const played = time >= entry.item.start;
         const active = time >= entry.item.start && time <= entry.item.end;
         entry.note.classList.toggle('played', played);
-        entry.label.classList.toggle('played', played);
+        if (showNoteLabels) {{
+          entry.label.classList.toggle('played', played);
+        }}
         entry.note.classList.toggle('active', active);
       }}
       requestAnimationFrame(tick);
@@ -444,6 +486,7 @@ def main() -> None:
         default=None,
         help="Image file or directory used for notes. Defaults to img/<audio-name>/ when available.",
     )
+    parser.add_argument("--display-config", default="display_config.json")
     args = parser.parse_args()
 
     audio_path = Path(args.audio)
@@ -475,7 +518,8 @@ def main() -> None:
     json_path.write_text(json.dumps(payload, indent=2, ensure_ascii=True), encoding="utf-8")
     write_csv(csv_path, notes)
     note_images = collect_note_images(audio_path, args.note_image)
-    write_html(html_path, audio_path, notes, duration, note_images)
+    display_config = load_display_config(Path(args.display_config), audio_path)
+    write_html(html_path, audio_path, notes, duration, note_images, display_config)
 
     print(f"Audio: {audio_path}")
     print(f"Duration: {duration:.3f}s")

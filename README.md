@@ -37,6 +37,27 @@ Pour utiliser une autre image ou un autre dossier:
 python scripts/analyze_bird_notes.py sound/canard.mp3 --note-image "img/canard"
 ```
 
+## Configuration visuelle
+
+Les reglages d'affichage sont dans `display_config.json`.
+
+La section `default` s'applique a tous les oiseaux. La section `birds` permet d'affiner par nom de fichier audio:
+
+- `canard` pour `sound/canard.mp3`
+- `merle` pour `sound/merle.mp3`
+
+Reglages utiles:
+
+- `note_height`: hauteur des images de notes.
+- `note_min_width`: largeur minimale des notes.
+- `show_note_labels`: affiche ou masque le texte des notes.
+- `highlight_color`: couleur du halo de la note en cours.
+- `pitch_step_px`: ecart vertical entre deux demi-tons. Baissez cette valeur si les notes montent/descendent trop.
+- `timeline_height`: hauteur totale de la frise.
+- `staff_top` et `line_spacing`: position et espacement des 5 lignes.
+
+Le script recentre automatiquement les notes autour de la portee et limite leur position pour eviter qu'elles sortent de la frise.
+
 Pour un chant plus aigu ou plus grave, ajustez la plage detectee:
 
 ```powershell
@@ -58,9 +79,6 @@ Si `notes` est vide, cela signifie que l'algorithme n'a pas trouve de hauteur st
 
 ----
 
-
-- Higlight de la couleur de la note ? actuellement figé à rouge
 - Auto scroll / défilement
-- hide les notes
 - assouplir la détections des notes ? merle ? parametrable ? 
-- fichier de configuration par oiseau. Ratio/Scaling des notes, ...
+- fichier de configuration par oiseau. Ratio/Scaling des notes, ... plutot que pxl
