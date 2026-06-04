@@ -5,22 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ornithographies</title>
   <style>
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-ExtraLight.otf'); font-weight: 200; font-style: normal; }
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-ExtraLightItalic.otf'); font-weight: 200; font-style: italic; }
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-Light.otf'); font-weight: 300; font-style: normal; }
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-LightItalic.otf'); font-weight: 300; font-style: italic; }
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-Regular.otf'); font-weight: 400; font-style: normal; }
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-RegularItalic.otf'); font-weight: 400; font-style: italic; }
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-Medium.otf'); font-weight: 500; font-style: normal; }
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-MediumItalic.otf'); font-weight: 500; font-style: italic; }
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-DemiBold.otf'); font-weight: 600; font-style: normal; }
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-DemiBoldItalic.otf'); font-weight: 600; font-style: italic; }
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-Bold.otf'); font-weight: 700; font-style: normal; }
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-BoldItalic.otf'); font-weight: 700; font-style: italic; }
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-ExtraBold.otf'); font-weight: 800; font-style: normal; }
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-ExtraBoldItalic.otf'); font-weight: 800; font-style: italic; }
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-Black.otf'); font-weight: 900; font-style: normal; }
-    @font-face { font-family: 'Gravitica'; src: url('fonts/Gravitica-BlackItalic.otf'); font-weight: 900; font-style: italic; }
+    @font-face { font-family: 'Rowan'; src: url('fonts/Rowan-Variable.ttf') format('truetype'); font-weight: 100 900; font-style: normal; }
+    @font-face { font-family: 'Rowan'; src: url('fonts/Rowan-VariableItalic.ttf') format('truetype'); font-weight: 100 900; font-style: italic; }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -32,7 +18,7 @@
     body {
       background: #fff;
       color: #111;
-      font-family: 'Gravitica', Arial, Helvetica, sans-serif;
+      font-family: 'Rowan', Arial, Helvetica, sans-serif;
       display: flex;
     }
 
@@ -376,12 +362,10 @@
       const staffCenterY = wrapperH / 2;
       const staffTop = staffCenterY - 2 * lineSpacing;
 
-      for (let i = 0; i < 5; i++) {
-        const line = document.createElement('div');
-        line.className = 'guide';
-        line.style.top = (staffTop + i * lineSpacing) + 'px';
-        timelineEl.appendChild(line);
-      }
+      const line = document.createElement('div');
+      line.className = 'guide';
+      line.style.top = staffCenterY + 'px';
+      timelineEl.appendChild(line);
 
       /* Playhead */
       const playhead = document.createElement('div');
