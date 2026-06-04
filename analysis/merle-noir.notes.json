@@ -1,0 +1,246 @@
+{
+  "audio": "sound/merle-noir.mp3",
+  "duration": 10.071,
+  "notes": [
+    {
+      "start": 0.58,
+      "end": 0.993,
+      "duration": 0.412,
+      "note": "A6",
+      "midi": 93,
+      "frequency_hz": 1760.0,
+      "estimated_midi": 93.4,
+      "confidence": 0.946
+    },
+    {
+      "start": 0.998,
+      "end": 1.074,
+      "duration": 0.075,
+      "note": "E7",
+      "midi": 100,
+      "frequency_hz": 2637.02,
+      "estimated_midi": 99.6,
+      "confidence": 0.891
+    },
+    {
+      "start": 1.115,
+      "end": 1.335,
+      "duration": 0.221,
+      "note": "C7",
+      "midi": 96,
+      "frequency_hz": 2093.0,
+      "estimated_midi": 96.15,
+      "confidence": 0.946
+    },
+    {
+      "start": 1.341,
+      "end": 1.672,
+      "duration": 0.331,
+      "note": "G7",
+      "midi": 103,
+      "frequency_hz": 3135.96,
+      "estimated_midi": 102.6,
+      "confidence": 0.399
+    },
+    {
+      "start": 1.834,
+      "end": 1.927,
+      "duration": 0.093,
+      "note": "G#6",
+      "midi": 92,
+      "frequency_hz": 1661.22,
+      "estimated_midi": 92.15,
+      "confidence": 0.651
+    },
+    {
+      "start": 2.032,
+      "end": 2.229,
+      "duration": 0.197,
+      "note": "F#6",
+      "midi": 90,
+      "frequency_hz": 1479.98,
+      "estimated_midi": 89.6,
+      "confidence": 0.372
+    },
+    {
+      "start": 2.229,
+      "end": 2.554,
+      "duration": 0.325,
+      "note": "C#7",
+      "midi": 97,
+      "frequency_hz": 2217.46,
+      "estimated_midi": 96.8,
+      "confidence": 0.985
+    },
+    {
+      "start": 2.554,
+      "end": 2.67,
+      "duration": 0.116,
+      "note": "B6",
+      "midi": 95,
+      "frequency_hz": 1975.53,
+      "estimated_midi": 95.2,
+      "confidence": 0.616
+    },
+    {
+      "start": 2.67,
+      "end": 2.972,
+      "duration": 0.302,
+      "note": "C#7",
+      "midi": 97,
+      "frequency_hz": 2217.46,
+      "estimated_midi": 97.4,
+      "confidence": 0.946
+    },
+    {
+      "start": 6.031,
+      "end": 6.13,
+      "duration": 0.099,
+      "note": "C7",
+      "midi": 96,
+      "frequency_hz": 2093.0,
+      "estimated_midi": 96.5,
+      "confidence": 0.549
+    },
+    {
+      "start": 6.293,
+      "end": 6.368,
+      "duration": 0.075,
+      "note": "C#7",
+      "midi": 97,
+      "frequency_hz": 2217.46,
+      "estimated_midi": 97.2,
+      "confidence": 0.946
+    },
+    {
+      "start": 6.426,
+      "end": 6.716,
+      "duration": 0.29,
+      "note": "C7",
+      "midi": 96,
+      "frequency_hz": 2093.0,
+      "estimated_midi": 96.0,
+      "confidence": 1.0
+    },
+    {
+      "start": 6.722,
+      "end": 6.92,
+      "duration": 0.197,
+      "note": "G7",
+      "midi": 103,
+      "frequency_hz": 3135.96,
+      "estimated_midi": 102.9,
+      "confidence": 0.549
+    },
+    {
+      "start": 7.175,
+      "end": 7.338,
+      "duration": 0.163,
+      "note": "G6",
+      "midi": 91,
+      "frequency_hz": 1567.98,
+      "estimated_midi": 91.2,
+      "confidence": 0.985
+    },
+    {
+      "start": 7.338,
+      "end": 7.483,
+      "duration": 0.145,
+      "note": "B6",
+      "midi": 95,
+      "frequency_hz": 1975.53,
+      "estimated_midi": 94.7,
+      "confidence": 0.985
+    },
+    {
+      "start": 7.483,
+      "end": 7.75,
+      "duration": 0.267,
+      "note": "C#7",
+      "midi": 97,
+      "frequency_hz": 2217.46,
+      "estimated_midi": 96.55,
+      "confidence": 1.0
+    },
+    {
+      "start": 7.75,
+      "end": 8.115,
+      "duration": 0.366,
+      "note": "A#6",
+      "midi": 94,
+      "frequency_hz": 1864.66,
+      "estimated_midi": 94.5,
+      "confidence": 0.946
+    },
+    {
+      "start": 8.121,
+      "end": 8.365,
+      "duration": 0.244,
+      "note": "B6",
+      "midi": 95,
+      "frequency_hz": 1975.53,
+      "estimated_midi": 95.3,
+      "confidence": 0.236
+    },
+    {
+      "start": 8.365,
+      "end": 8.44,
+      "duration": 0.075,
+      "note": "A6",
+      "midi": 93,
+      "frequency_hz": 1760.0,
+      "estimated_midi": 92.7,
+      "confidence": 0.372
+    },
+    {
+      "start": 8.516,
+      "end": 8.597,
+      "duration": 0.081,
+      "note": "G#6",
+      "midi": 92,
+      "frequency_hz": 1661.22,
+      "estimated_midi": 92.03,
+      "confidence": 0.375
+    },
+    {
+      "start": 8.62,
+      "end": 8.725,
+      "duration": 0.104,
+      "note": "F#6",
+      "midi": 90,
+      "frequency_hz": 1479.98,
+      "estimated_midi": 89.75,
+      "confidence": 0.756
+    },
+    {
+      "start": 8.76,
+      "end": 8.916,
+      "duration": 0.157,
+      "note": "C7",
+      "midi": 96,
+      "frequency_hz": 2093.0,
+      "estimated_midi": 95.7,
+      "confidence": 0.549
+    },
+    {
+      "start": 8.916,
+      "end": 9.178,
+      "duration": 0.261,
+      "note": "D#7",
+      "midi": 99,
+      "frequency_hz": 2489.02,
+      "estimated_midi": 98.6,
+      "confidence": 0.946
+    },
+    {
+      "start": 9.271,
+      "end": 9.346,
+      "duration": 0.075,
+      "note": "G7",
+      "midi": 103,
+      "frequency_hz": 3135.96,
+      "estimated_midi": 102.55,
+      "confidence": 0.109
+    }
+  ]
+}

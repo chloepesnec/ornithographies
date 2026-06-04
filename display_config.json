@@ -1,28 +1,60 @@
 {
   "default": {
-    "timeline_height": 360,
-    "staff_top": 92,
-    "line_spacing": 44,
     "px_per_second": 110,
-    "note_height": 128,
-    "note_min_width": 128,
-    "active_scale": 1.25,
-    "show_note_labels": false,
+    "note_scale": 0.32,
+    "active_scale": 1.22,
     "highlight_color": "rgba(224, 90, 42, 0.55)",
-    "vertical_padding": 8,
-    "pitch_step_px": 22
+    "vertical_padding": 10,
+    "pitch_step_px": 22,
+    "line_spacing": 44
   },
-  "birds": {
-    "canard": {
-      "note_height": 128,
-      "note_min_width": 128,
-      "highlight_color": "rgb(224, 203, 42, 0.55)"
+  "birds": [
+    {
+      "id": "grand-duc-d-europe",
+      "name": "Grand-duc d'Europe",
+      "drawing": "img/grand-duc-d-europe/drawing.svg",
+      "sound": null,
+      "dataUrl": null,
+      "keys": 0
     },
-    "merle": {
-      "note_height": 240,
-      "note_min_width": 240,
-      "pitch_step_px": 18,
-      "highlight_color": "rgba(224, 90, 42, 0.55)"
+    {
+      "id": "merle-noir",
+      "name": "Merle noir",
+      "drawing": "img/merle-noir/drawing.svg",
+      "sound": "sound/merle-noir.mp3",
+      "dataUrl": "analysis/merle-noir.notes.json",
+      "keys": 13,
+      "note_scale": 0.5,
+      "pitch_step_px": 16
+    },
+    {
+      "id": "coucou-gris",
+      "name": "Coucou gris",
+      "drawing": "img/coucou-gris/drawing.svg",
+      "sound": "sound/coucou-gris.mp3",
+      "dataUrl": "analysis/coucou-gris.notes.json",
+      "note_scale": 0.25,
+      "keys": 12
+    },
+    {
+      "id": "canard-colvert",
+      "name": "Canard colvert",
+      "drawing": "img/canard-colvert/drawing.svg",
+      "sound": "sound/canard-colvert.mp3",
+      "dataUrl": "analysis/canard-colvert.notes.json",
+      "keys": 5,
+      "note_scale": 0.6,
+      "highlight_color": "rgba(224, 203, 42, 0.55)"
+    },
+    {
+      "id": "mesange-charbonniere",
+      "name": "Mésange charbonnière",
+      "drawing": "img/mesange-charbonniere/drawing.svg",
+      "sound": "sound/mesange-charboniere.mp3",
+      "dataUrl": "analysis/mesange-charboniere.notes.json",
+      "keys": 12,
+      "note_scale": 0.45,
+      "pitch_step_px": 16
     }
-  }
+  ]
 }

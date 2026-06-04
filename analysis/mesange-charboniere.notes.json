@@ -1,0 +1,292 @@
+{
+  "audio": "sound/mesange-charboniere.mp3",
+  "duration": 10.837,
+  "notes": [
+    {
+      "start": 0.229,
+      "end": 0.357,
+      "duration": 0.128,
+      "note": "G#7",
+      "midi": 104,
+      "frequency_hz": 3322.44,
+      "estimated_midi": 103.55,
+      "confidence": 0.485,
+      "key": 9
+    },
+    {
+      "start": 0.437,
+      "end": 0.667,
+      "duration": 0.229,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.6,
+      "confidence": 0.347,
+      "key": 6
+    },
+    {
+      "start": 0.672,
+      "end": 0.901,
+      "duration": 0.229,
+      "note": "A7",
+      "midi": 105,
+      "frequency_hz": 3520.0,
+      "estimated_midi": 104.9,
+      "confidence": 0.686,
+      "key": 10
+    },
+    {
+      "start": 0.901,
+      "end": 1.173,
+      "duration": 0.272,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.8,
+      "confidence": 0.476,
+      "key": 6
+    },
+    {
+      "start": 1.173,
+      "end": 1.451,
+      "duration": 0.277,
+      "note": "G#7",
+      "midi": 104,
+      "frequency_hz": 3322.44,
+      "estimated_midi": 103.9,
+      "confidence": 0.485,
+      "key": 9
+    },
+    {
+      "start": 1.483,
+      "end": 1.653,
+      "duration": 0.171,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.5,
+      "confidence": 0.279,
+      "key": 6
+    },
+    {
+      "start": 1.653,
+      "end": 1.925,
+      "duration": 0.272,
+      "note": "G#7",
+      "midi": 104,
+      "frequency_hz": 3322.44,
+      "estimated_midi": 104.3,
+      "confidence": 0.616,
+      "key": 9
+    },
+    {
+      "start": 1.957,
+      "end": 2.128,
+      "duration": 0.171,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.5,
+      "confidence": 0.279,
+      "key": 6
+    },
+    {
+      "start": 2.112,
+      "end": 2.405,
+      "duration": 0.293,
+      "note": "A7",
+      "midi": 105,
+      "frequency_hz": 3520.0,
+      "estimated_midi": 105.1,
+      "confidence": 0.485,
+      "key": 10
+    },
+    {
+      "start": 2.405,
+      "end": 2.645,
+      "duration": 0.24,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.75,
+      "confidence": 0.421,
+      "key": 6
+    },
+    {
+      "start": 2.747,
+      "end": 2.885,
+      "duration": 0.139,
+      "note": "G7",
+      "midi": 103,
+      "frequency_hz": 3135.96,
+      "estimated_midi": 103.0,
+      "confidence": 0.372,
+      "key": 7
+    },
+    {
+      "start": 2.891,
+      "end": 3.227,
+      "duration": 0.336,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.7,
+      "confidence": 0.394,
+      "key": 6
+    },
+    {
+      "start": 5.067,
+      "end": 5.195,
+      "duration": 0.128,
+      "note": "G7",
+      "midi": 103,
+      "frequency_hz": 3135.96,
+      "estimated_midi": 102.75,
+      "confidence": 0.686,
+      "key": 7
+    },
+    {
+      "start": 5.312,
+      "end": 5.52,
+      "duration": 0.208,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.5,
+      "confidence": 0.272,
+      "key": 6
+    },
+    {
+      "start": 5.525,
+      "end": 5.787,
+      "duration": 0.261,
+      "note": "G#7",
+      "midi": 104,
+      "frequency_hz": 3322.44,
+      "estimated_midi": 104.4,
+      "confidence": 0.616,
+      "key": 9
+    },
+    {
+      "start": 5.787,
+      "end": 6.037,
+      "duration": 0.251,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.7,
+      "confidence": 0.441,
+      "key": 6
+    },
+    {
+      "start": 6.037,
+      "end": 6.272,
+      "duration": 0.235,
+      "note": "G7",
+      "midi": 103,
+      "frequency_hz": 3135.96,
+      "estimated_midi": 103.2,
+      "confidence": 0.517,
+      "key": 7
+    },
+    {
+      "start": 6.293,
+      "end": 6.635,
+      "duration": 0.341,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.5,
+      "confidence": 0.332,
+      "key": 6
+    },
+    {
+      "start": 8.752,
+      "end": 8.837,
+      "duration": 0.085,
+      "note": "A7",
+      "midi": 105,
+      "frequency_hz": 3520.0,
+      "estimated_midi": 104.55,
+      "confidence": 0.549,
+      "key": 10
+    },
+    {
+      "start": 8.997,
+      "end": 9.189,
+      "duration": 0.192,
+      "note": "C#7",
+      "midi": 97,
+      "frequency_hz": 2217.46,
+      "estimated_midi": 97.2,
+      "confidence": 0.167,
+      "key": 1
+    },
+    {
+      "start": 9.211,
+      "end": 9.445,
+      "duration": 0.235,
+      "note": "A#7",
+      "midi": 106,
+      "frequency_hz": 3729.31,
+      "estimated_midi": 105.5,
+      "confidence": 0.616,
+      "key": 12
+    },
+    {
+      "start": 9.451,
+      "end": 9.643,
+      "duration": 0.192,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.6,
+      "confidence": 0.347,
+      "key": 6
+    },
+    {
+      "start": 9.659,
+      "end": 9.904,
+      "duration": 0.245,
+      "note": "A7",
+      "midi": 105,
+      "frequency_hz": 3520.0,
+      "estimated_midi": 104.95,
+      "confidence": 0.616,
+      "key": 10
+    },
+    {
+      "start": 9.904,
+      "end": 10.112,
+      "duration": 0.208,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.7,
+      "confidence": 0.426,
+      "key": 6
+    },
+    {
+      "start": 10.117,
+      "end": 10.4,
+      "duration": 0.283,
+      "note": "A7",
+      "midi": 105,
+      "frequency_hz": 3520.0,
+      "estimated_midi": 105.3,
+      "confidence": 0.616,
+      "key": 10
+    },
+    {
+      "start": 10.405,
+      "end": 10.741,
+      "duration": 0.336,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.6,
+      "confidence": 0.412,
+      "key": 6
+    }
+  ]
+}

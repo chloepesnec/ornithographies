@@ -1,0 +1,193 @@
+{
+  "audio": "sound/canard-colvert.mp3",
+  "duration": 10.019,
+  "notes": [
+    {
+      "start": 0.342,
+      "end": 0.493,
+      "duration": 0.151,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.91,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 0.906,
+      "end": 1.039,
+      "duration": 0.134,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.76,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 1.451,
+      "end": 1.591,
+      "duration": 0.139,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.73,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 2.02,
+      "end": 2.159,
+      "duration": 0.139,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 98.24,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 2.577,
+      "end": 2.734,
+      "duration": 0.157,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 98.41,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 3.17,
+      "end": 3.291,
+      "duration": 0.122,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 98.06,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 3.721,
+      "end": 3.866,
+      "duration": 0.145,
+      "note": "D#7",
+      "midi": 99,
+      "frequency_hz": 2489.02,
+      "estimated_midi": 98.85,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 4.278,
+      "end": 4.429,
+      "duration": 0.151,
+      "note": "E7",
+      "midi": 100,
+      "frequency_hz": 2637.02,
+      "estimated_midi": 100.05,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 4.841,
+      "end": 4.981,
+      "duration": 0.139,
+      "note": "D#7",
+      "midi": 99,
+      "frequency_hz": 2489.02,
+      "estimated_midi": 99.07,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 5.41,
+      "end": 5.544,
+      "duration": 0.134,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.86,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 6.235,
+      "end": 6.339,
+      "duration": 0.104,
+      "note": "C#7",
+      "midi": 97,
+      "frequency_hz": 2217.46,
+      "estimated_midi": 97.35,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 6.757,
+      "end": 6.896,
+      "duration": 0.139,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 97.91,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 7.332,
+      "end": 7.471,
+      "duration": 0.139,
+      "note": "D#7",
+      "midi": 99,
+      "frequency_hz": 2489.02,
+      "estimated_midi": 98.51,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 7.883,
+      "end": 8.017,
+      "duration": 0.134,
+      "note": "C#7",
+      "midi": 97,
+      "frequency_hz": 2217.46,
+      "estimated_midi": 97.37,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 8.429,
+      "end": 8.58,
+      "duration": 0.151,
+      "note": "D#7",
+      "midi": 99,
+      "frequency_hz": 2489.02,
+      "estimated_midi": 98.72,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 9.009,
+      "end": 9.16,
+      "duration": 0.151,
+      "note": "D#7",
+      "midi": 99,
+      "frequency_hz": 2489.02,
+      "estimated_midi": 98.8,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    },
+    {
+      "start": 9.59,
+      "end": 9.718,
+      "duration": 0.128,
+      "note": "D7",
+      "midi": 98,
+      "frequency_hz": 2349.32,
+      "estimated_midi": 98.35,
+      "confidence": 0.25,
+      "method": "energy_centroid"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "audio": "sound/coucou-gris.mp3",
+  "duration": 10.183,
+  "notes": [
+    {
+      "start": 1.103,
+      "end": 1.324,
+      "duration": 0.221,
+      "note": "D5",
+      "midi": 74,
+      "frequency_hz": 587.33,
+      "estimated_midi": 74.4,
+      "confidence": 0.686
+    },
+    {
+      "start": 1.324,
+      "end": 1.852,
+      "duration": 0.528,
+      "note": "C5",
+      "midi": 72,
+      "frequency_hz": 523.25,
+      "estimated_midi": 71.9,
+      "confidence": 0.946
+    },
+    {
+      "start": 2.676,
+      "end": 2.908,
+      "duration": 0.232,
+      "note": "D#5",
+      "midi": 74,
+      "frequency_hz": 622.25,
+      "estimated_midi": 74.8,
+      "confidence": 0.827
+    },
+    {
+      "start": 2.908,
+      "end": 3.558,
+      "duration": 0.65,
+      "note": "C5",
+      "midi": 72,
+      "frequency_hz": 523.25,
+      "estimated_midi": 72.1,
+      "confidence": 0.891
+    },
+    {
+      "start": 4.063,
+      "end": 4.313,
+      "duration": 0.25,
+      "note": "D#5",
+      "midi": 75,
+      "frequency_hz": 622.25,
+      "estimated_midi": 74.85,
+      "confidence": 0.686
+    },
+    {
+      "start": 4.313,
+      "end": 5.079,
+      "duration": 0.766,
+      "note": "C5",
+      "midi": 72,
+      "frequency_hz": 523.25,
+      "estimated_midi": 72.3,
+      "confidence": 0.549
+    },
+    {
+      "start": 5.486,
+      "end": 5.735,
+      "duration": 0.25,
+      "note": "D#5",
+      "midi": 75,
+      "frequency_hz": 622.25,
+      "estimated_midi": 74.8,
+      "confidence": 0.827
+    },
+    {
+      "start": 5.735,
+      "end": 6.531,
+      "duration": 0.796,
+      "note": "C5",
+      "midi": 72,
+      "frequency_hz": 523.25,
+      "estimated_midi": 72.3,
+      "confidence": 0.686
+    },
+    {
+      "start": 7.012,
+      "end": 7.187,
+      "duration": 0.174,
+      "note": "D#5",
+      "midi": 75,
+      "frequency_hz": 622.25,
+      "estimated_midi": 74.9,
+      "confidence": 0.827
+    },
+    {
+      "start": 7.256,
+      "end": 8.057,
+      "duration": 0.801,
+      "note": "C5",
+      "midi": 72,
+      "frequency_hz": 523.25,
+      "estimated_midi": 72.2,
+      "confidence": 0.339
+    },
+    {
+      "start": 8.516,
+      "end": 8.766,
+      "duration": 0.25,
+      "note": "D#5",
+      "midi": 75,
+      "frequency_hz": 622.25,
+      "estimated_midi": 74.8,
+      "confidence": 0.757
+    },
+    {
+      "start": 8.766,
+      "end": 9.584,
+      "duration": 0.819,
+      "note": "C5",
+      "midi": 72,
+      "frequency_hz": 523.25,
+      "estimated_midi": 72.25,
+      "confidence": 0.372
+    }
+  ]
+}
